@@ -21,6 +21,8 @@ GEM
     rack (1.6.0)
     rack-accept (0.4.5)
       rack (>= 0.4)
+    rack-test (0.6.3)
+      rack (>= 1.0)
     roda (2.2.0)
       rack
     rspec (3.2.0)
@@ -50,6 +52,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  rack-test
   roda
   rspec
   yaks

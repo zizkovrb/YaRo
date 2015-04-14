@@ -3,3 +3,4 @@
 require 'roda'
 
 require_relative 'service/root'
+require_relative 'service/trees'
