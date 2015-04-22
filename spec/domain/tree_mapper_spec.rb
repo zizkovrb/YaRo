@@ -10,13 +10,14 @@ describe TreeMapper do
   end
   context 'when mapped' do
     it 'can be called' do
-      tree = Models::Tree.new(id: 1, name: 'Beech')
+      tree = Tree.new(id: 1, name: 'Beech')
       expect(yaks.call(tree)).to eq %{{
   "data": [
     {
       "type": "trees",
       "id": 1,
-      "name": "Beech"
+      "name": "Beech",
+      "href": "/trees/1"
     }
   ]
 }}

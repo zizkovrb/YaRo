@@ -1,6 +1,7 @@
-require_relative '../../../domain/models/tree'
+require_relative '../../domain/tree'
 
-include Domain::Models
+include Domain
+
 describe Tree do
   context 'when initializing' do
     it 'can be created' do
@@ -19,6 +20,10 @@ describe Tree do
 
     it 'returns one by id' do
       expect(Tree[1]).to eq Tree.new(id: 1, name: 'Beech')
+    end
+
+    it 'returns one by id string' do
+      expect(Tree['1']).to eq Tree.new(id: 1, name: 'Beech')
     end
   end
 end

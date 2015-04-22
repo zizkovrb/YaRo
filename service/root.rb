@@ -3,12 +3,11 @@
 module Service
   # Root route of the whole service
   class Root < Roda
-    plugin :json
-    plugin :halt
-
     route do |r|
+      response['Content-Type'] = "application/vnd.api+json"
+
       r.root do
-        r.halt 200
+        {data: {trees: "/trees"}}.to_json
       end
 
       r.on 'trees' do

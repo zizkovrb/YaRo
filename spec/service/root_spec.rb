@@ -5,5 +5,10 @@ RSpec.describe Service::Root do
     get '/'
     expect(last_response.status).to eq 200
   end
+
+  it 'returns service description' do
+    get '/'
+    expect(last_response.body).to eq %({"data":{"trees":"/trees"}})
+  end
 end
 
