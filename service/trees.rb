@@ -3,28 +3,26 @@
 module Service
   # Trees routes of the service
   class Trees < Roda
+    plugin :default_headers,
+        'Content-Type'=>'application/vnd.api+json'#,
+        #'Content-Security-Policy'=>"default-src 'self'",
+        #'Strict-Transport-Security'=>'max-age=16070400;',
+        #'X-Frame-Options'=>'deny',
+        #'X-Content-Type-Options'=>'nosniff',
+        #'X-XSS-Protection'=>'1; mode=block'
+
+    plugin Yaksi
+
     route do |r|
-      domain = Domain::Tree
-      response['Content-Type'] = "application/vnd.api+json"
+      domain Domain::Tree
 
       r.is do
-        yaksy(domain.all)
+        yaksi(:all)
       end
 
       r.is ':id' do |id|
-        yaksy(domain[id])
+        yaksi(:one, id)
       end
-    end
-
-    private
-    def yaks
-      @yaks ||= Yaks.new do
-        default_format :json_api
-      end
-    end
-
-    def yaksy(object)
-      yaks.call(object, env: ENV['RACK_ENV'])
     end
   end
 end
