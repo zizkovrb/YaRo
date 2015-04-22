@@ -19,7 +19,7 @@ module Domain
       REPOSITORY
     end
 
-    def self.[](id)
+    def self.one(id)
       REPOSITORY[id.to_i - 1]
     end
   end

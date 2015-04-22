@@ -20,11 +20,11 @@ describe Tree do
     end
 
     it 'returns one by id' do
-      expect(Tree[1]).to eq Tree.new(id: 1, name: 'Beech')
+      expect(Tree.one(1)).to eq Tree.new(id: 1, name: 'Beech')
     end
 
     it 'returns one by id string' do
-      expect(Tree['1']).to eq Tree.new(id: 1, name: 'Beech')
+      expect(Tree.one('1')).to eq Tree.new(id: 1, name: 'Beech')
     end
   end
 end
