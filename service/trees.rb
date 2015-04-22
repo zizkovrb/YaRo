@@ -1,19 +1,18 @@
 # Tree service route
 
-include Domain
-
 module Service
   # Trees routes of the service
   class Trees < Roda
     route do |r|
+      domain = Domain::Tree
       response['Content-Type'] = "application/vnd.api+json"
 
       r.is do
-        yaksy(Tree.all)
+        yaksy(domain.all)
       end
 
       r.is ':id' do |id|
-        yaksy(Tree[id])
+        yaksy(domain[id])
       end
     end
 

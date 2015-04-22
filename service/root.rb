@@ -1,5 +1,4 @@
 # Root of the service
-
 module Service
   # Root route of the whole service
   class Root < Roda
