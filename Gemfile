@@ -7,6 +7,7 @@ gem 'yaks'
 group :development do
   gem 'shotgun'
   gem 'byebug'
+  gem 'rubocop'
 end
 
 group :test do
