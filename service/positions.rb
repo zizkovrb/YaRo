@@ -1,5 +1,5 @@
-# Position service route
 module Service
+  # Position service route
   class Positions < Roda
     route do |r|
       r.is do

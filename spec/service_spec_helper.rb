@@ -11,4 +11,3 @@ end
 def app
   Service::Root
 end
-
