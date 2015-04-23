@@ -8,7 +8,7 @@ RSpec.describe Service::Root do
 
   it 'returns service description' do
     get '/'
-    expect(last_response.body).to eq %({"data":{"trees":"/trees"}})
+    expect(last_response.body).to eq %({"data":{"trees":"/trees","positions":"/positions"}})
   end
 end
 
@@ -80,7 +80,15 @@ RSpec.describe Service::Trees do
       end
     end
   end
+end
 
+describe Service::Positions do
+  context 'when on the root' do
+    it 'has tree root' do
+      get '/positions'
+      expect(last_response.status).to eq 200
+    end
+  end
 end
 
 

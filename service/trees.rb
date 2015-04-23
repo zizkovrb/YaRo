@@ -1,5 +1,4 @@
 # Tree service route
-
 module Service
   # Trees routes of the service
   class Trees < Roda

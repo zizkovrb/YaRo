@@ -7,3 +7,4 @@ require_relative 'domain'
 
 require_relative 'service/root'
 require_relative 'service/trees'
+require_relative 'service/positions'

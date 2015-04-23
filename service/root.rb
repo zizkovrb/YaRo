@@ -6,11 +6,15 @@ module Service
       response['Content-Type'] = "application/vnd.api+json"
 
       r.root do
-        {data: {trees: "/trees"}}.to_json
+        {data: {trees: "/trees", positions: "/positions"}}.to_json
       end
 
       r.on 'trees' do
         r.run Service::Trees
+      end
+
+      r.on 'positions' do
+        r.run Service::Positions
       end
     end
   end
